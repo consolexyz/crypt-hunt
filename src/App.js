@@ -1,10 +1,10 @@
 
-import { colors, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
 import Homepage from './pages/Homepage';
- import Tokenpage from './pages/Tokenpage';
+import Tokenpage from './pages/Tokenpage';
 
 
 function App() {

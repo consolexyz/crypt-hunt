@@ -1,6 +1,7 @@
 import React from 'react'
-import {AppBar, Container, makeStyles, Menu, MenuItem, Select, Toolbar, Typography, withWidth} from "@material-ui/core"
-import { Navigate, useNavigate } from 'react-router-dom';
+import {AppBar, Container, makeStyles, MenuItem, Select, Toolbar, Typography, } from "@material-ui/core"
+import {useNavigate } from 'react-router-dom';
+import { CryptState } from '../CryptContext';
 
 const useStyles = makeStyles(() => ({
     title:{
@@ -17,6 +18,10 @@ const Header = () => {
 
     const classes = useStyles()
     const navigate = useNavigate()
+
+    const {currency, setCurrency } = CryptState();
+
+    console.log(currency)
     return (
         <div>
             <AppBar color='transparent' position='static'>
@@ -31,6 +36,8 @@ const Header = () => {
                             height:40,
                            marginRight:15,
                           }}
+                          value={currency}
+                          onChange={(e) => setCurrency(e.target.value) }
                         >
                             <MenuItem value = {'USD'}>USD</MenuItem>
                             <MenuItem value = {'NGN'} >NGN</MenuItem>
